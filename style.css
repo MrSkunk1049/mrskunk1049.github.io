@@ -8,7 +8,7 @@
 #herotext{
     text-align: center;
     position: absolute;
-    top: 10%;
+    top: 6%;
     left: 13%;
     color: white;
     font-family: sans-serif;
@@ -20,6 +20,21 @@
     position: absolute;
     top: 2%;
     left: 1%;
+}
+.button{
+    background-color:aquamarine;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    left: 50%;
 }
 h1{
     font-size: 100px;
