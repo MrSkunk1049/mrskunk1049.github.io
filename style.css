@@ -1,4 +1,26 @@
 #firstline{color: red}
+ul.navbar{
+    list-style-type: none;
+    background-color: rgb(59, 59, 59);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+li.navbar{
+    float: left;
+}
+li.navbar a{
+    display: block;
+    color: rgb(175, 174, 174);
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif
+}
+li.navbar a:hover{
+    color: white;
+}
 #bannerimage{
     width: 100%;
     background-image: url(./images/shockedblackguy3.jpg);
@@ -22,7 +44,7 @@
     background-image: url(./images/opduck.jpg);
     height: 83px;
     position: absolute;
-    top: 2%;
+    top: 7%;
     left: 1%;
 }
 .button{
@@ -52,13 +74,13 @@
 #blehcat{
     width: 100px;
     position: absolute;
-    top: 62%;
+    top: 69%;
     left: 38%;
 }
 #shockedcat{
     width: 100px;
     position: absolute;
-    top: 62%;
+    top: 69%;
     left: 56.5%;
 }
 .links{
@@ -77,4 +99,17 @@ h1{
 }
 h2{
     font-size: 50px;
+}
+
+
+
+
+#socialmedia{
+    margin-top: 200px;
+}
+#monkey{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
 }
