@@ -33,6 +33,12 @@ li.navbar a:hover{
     height: 405px;
     background-position: center;
 }
+#bannerimage3{
+    width: 100%;
+    background-image: url(./images/demonbanner.JPG);
+    height: 405px;
+    background-position: center;
+}
 #herotext{
     text-align: center;
     padding-top: 80px;
@@ -105,7 +111,7 @@ h2{
 
 
 #socialmedia{
-    margin-top: 200px;
+    margin-top: 50px;
 }
 #monkey{
     width: 30%;
