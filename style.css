@@ -36,6 +36,29 @@
     top: 30%;
     left: 50%;
 }
+#intro{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2% 10%;
+}
+#mylinks{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    color: tomato;
+}
+#blehcat{
+    width: 100px;
+    position: absolute;
+    top: 62%;
+    left: 38%;
+}
+#shockedcat{
+    width: 100px;
+    position: absolute;
+    top: 62%;
+    left: 56.5%;
+}
 h1{
     font-size: 100px;
 }
