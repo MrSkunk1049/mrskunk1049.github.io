@@ -2,6 +2,24 @@
 body{
     margin: 0;
 }
+#bannerimage{
+    width: 100%;
+    background-image: url(./images/shockedblackguy3.jpg);
+    height: 405px;
+    background-position:center;
+}
+#bannerimage2{
+    width: 100%;
+    background-image: url(./images/devilvortex.jpg);
+    height: 405px;
+    background-position: center;
+}
+#bannerimage3{
+    width: 100%;
+    background-image: url(./images/demonbanner.JPG);
+    height: 395px;
+    background-position: center;
+}
 ul.navbar{
     list-style-type: none;
     background-color: rgb(59, 59, 59);
@@ -30,24 +48,7 @@ li.navbar a:hover{
     height: 20px;
     font-size: 22px;
 }
-#bannerimage{
-    width: 100%;
-    background-image: url(./images/shockedblackguy3.jpg);
-    height: 405px;
-    background-position:center;
-}
-#bannerimage2{
-    width: 100%;
-    background-image: url(./images/devilvortex.jpg);
-    height: 405px;
-    background-position: center;
-}
-#bannerimage3{
-    width: 100%;
-    background-image: url(./images/demonbanner.JPG);
-    height: 405px;
-    background-position: center;
-}
+
 #herotext{
     text-align: center;
     padding-top: 80px;
