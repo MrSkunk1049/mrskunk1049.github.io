@@ -34,6 +34,39 @@ body{
     position: relative; /* Relative positioning for absolute child */
     text-align: center; /* Center inline elements horizontally */
 }
+#bannerimage4{
+    width: 100%;
+    background-image: url(./images/blem.jpeg);
+    height: 248px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
+#bannerimage5{
+    width: 100%;
+    background-image: url(./images/koshitan.jpg);
+    height: 300px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
+#bannerimage6{
+    width: 100%;
+    background-image: url(./images/ome32-4x.gif);
+    height: 372px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
 ul.navbar{
     list-style-type: none;
     background-color: rgb(59, 59, 59);
@@ -249,3 +282,35 @@ navbar{
 }
 */
 
+
+
+/*
+************************************************************************************************
+JAVASCRIPT CSS PROPERTIES
+************************************************************************************************
+*/
+
+#redKey1{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey2{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey3{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey4{
+    visibility: hidden;
+    position: absolute;
+}
+
+#greenKey{
+    visibility: hidden;
+    position: absolute;
+}
