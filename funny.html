@@ -25,20 +25,43 @@
 
 
 
-    <div><button id = "startButton">Start Game</button></div>
-
-    <img src="/images/red_key1.png" id="redKey1">
-    <img src="/images/red_key2.png" id="redKey2">
-    <img src="/images/red_key3.png" id="redKey3">
-    <img src="/images/red_key4.png" id="redKey4">
-    <img src="/images/green_key.png" id="greenKey">
-
-    <canvas id="canvas1"></canvas>
-    <script src="script.js"></script>
+    <div><button id = "startButton">Start Game</button></div>\
 
     <audio controls id="myaudio">
       <source src="images/isolation.mp3">
     </audio>
+    <h2 id="correct"><center>
+      Nice job, you guessed the right key :D <img src="images/peepoClap-4x.gif">
+    </center></h2>
+    <h2 id="incorrect"><center>
+      You guessed the wrong key, better luck next time <img src="images/RIPBOZO-4x.gif">
+    </center></h2>
+    
+    <div class="container">
+      <center>
+        <canvas id="canvas1"></canvas>
+      </center>
+      <img src="/images/red_key.png" id="redKey1">
+      <img src="/images/red_key.png" id="redKey2">
+      <img src="/images/red_key.png" id="redKey3">
+      <img src="/images/red_key.png" id="redKey4">
+      <img src="/images/red_key.png" id="redKey5">
+      <img src="/images/red_key.png" id="redKey6">
+      <img src="/images/red_key.png" id="redKey7">
+      <img src="/images/red_key.png" id="redKey8">
+      <img src="/images/green_key.png" id="greenKey">
+    </div>
 
+    <script src="script.js"></script>
+
+    <h1><center>
+      Instructions (for all you non GD players):
+    </center></h1>
+    <ol id="funny_instructions">
+      <li>8 red keys will appear, and a green key will briefly glow among those 8 keys</li>
+      <li>The red keys will randomly move and shuffle around</li>
+      <li>Your goal is to guess where the green key is</li>
+      <li>Refresh the page to play again (the restart button doesn't work)</li>
+    </ol>
  </body>
 </html>

@@ -254,16 +254,12 @@ navbar{
     margin-top: -40px;
 }
 
-
-#canvas1{
-    border: 5px solid black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    width: 600px;
-    height: 600px; 
+#funny_instructions{
+    text-align: center;
+    list-style-position: inside;
 }
+
+
 
 
 /*
@@ -285,9 +281,9 @@ navbar{
 
 
 /*
-************************************************************************************************
+*******************************************************************************************************************************
 JAVASCRIPT CSS PROPERTIES
-************************************************************************************************
+*******************************************************************************************************************************
 */
 
 #redKey1{
@@ -310,7 +306,49 @@ JAVASCRIPT CSS PROPERTIES
     position: absolute;
 }
 
+#redKey5{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey6{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey7{
+    visibility: hidden;
+    position: absolute;
+}
+
+#redKey8{
+    visibility: hidden;
+    position: absolute;
+}
+
 #greenKey{
     visibility: hidden;
     position: absolute;
+}
+
+#canvas1{
+    border: 5px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#correct{
+    position: absolute;
+    margin-top: 100px;
+    visibility: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#incorrect{
+    position: absolute;
+    margin-top: 100px;
+    visibility: hidden;
+    left: 50%;
+    transform: translateX(-50%);
 }
