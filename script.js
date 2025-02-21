@@ -189,7 +189,7 @@ function startGame(){
 
             i++;
         }, 5);
-    }, 3500)
+    }, 3500) 
 
     /*
     Slowly rotate the keys
