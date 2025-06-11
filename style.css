@@ -1,3 +1,69 @@
+/* (gonna organize this later)
+*****************************************************************
+MAIN PAGE
+*****************************************************************
+*/
+
+/*
+*****************************************************************
+SOCIAL MEDIA
+*****************************************************************
+*/
+
+/*
+*****************************************************************
+DEMONLOG
+*****************************************************************
+*/
+
+/*
+*****************************************************************
+SPECS
+*****************************************************************
+*/
+
+/*
+*****************************************************************
+BLOG
+*****************************************************************
+*/
+
+#blogposts{
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.blogtitle{
+    color: rgb(47, 144, 255);
+    margin: 0
+}
+
+.blogtitle a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.blogtitle:hover{
+    text-decoration: underline;
+}
+
+
+/*
+*****************************************************************
+FUNNY
+*****************************************************************
+*/
+
+#funny_instructions{
+    text-align: center;
+    list-style-position: inside;
+}
+
+
+
+
 #firstline{color: red}
 body{
     margin: 0;
@@ -253,32 +319,6 @@ navbar{
 .creator{
     margin-top: -40px;
 }
-
-#funny_instructions{
-    text-align: center;
-    list-style-position: inside;
-}
-
-
-
-
-/*
-.block1{
-    font-size: 100px;
-    float: left;
-    padding-right: 100px;
-}
-.block2{
-    float: left;
-    padding: 10px;
-}
-.block3{
-    float: left;
-    padding: 10px;
-}
-*/
-
-
 
 /*
 *******************************************************************************************************************************

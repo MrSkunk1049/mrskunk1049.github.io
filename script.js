@@ -124,9 +124,10 @@ function startGame(){
         audio.currentTime = 0;
 
         let delay = 0;
-        for(let i = 0; i < 5; i++){
+
+        for(let i = 0; i < 26; i++){
             window.setTimeout(function(){
-                let movementNum = Math.floor(5 * Math.random()) + 1;
+                let movementNum = Math.floor(11 * Math.random()) + 1;
                 switch(movementNum){
                     case 1:
                         diagSwitch(curPos);
@@ -142,6 +143,24 @@ function startGame(){
                         break;
                     case 5:
                         cclockwiseCClockwise(curPos);
+                        break;
+                    case 6:
+                        bigClockwise(curPos);
+                        break;
+                    case 7:
+                        bigCClockwise(curPos);
+                        break;
+                    case 8:
+                        swap(curPos);
+                        break;
+                    case 9:
+                        shuffle1(curPos);
+                        break;
+                    case 10:
+                        shuffle2(curPos);
+                        break;
+                    case 11:
+                        topBottomSwap(curPos);
                         break;
                     default:
                 }
@@ -189,7 +208,7 @@ function startGame(){
 
             i++;
         }, 5);
-    }, 3500) 
+    }, 9800) 
 
     /*
     Slowly rotate the keys
@@ -287,7 +306,7 @@ function startGame(){
 
             i++;
         }, 20);
-    }, 4250);   
+    }, 10550);   
 }
 
 function restartGame(){
@@ -299,6 +318,8 @@ function restartGame(){
 ****************************************************************************************************************
 MOVEMENT FUNCTIONS
 ****************************************************************************************************************
+
+Note that distance between adjacent keys is 20 units.
 */
 
 function diagSwitch(curPos) {
@@ -341,7 +362,6 @@ function diagSwitch(curPos) {
         redKey4.style.top = (topPercent4 - 0.4) + "%";
         redKey4.style.left = (leftPercent4 - 0.4) + "%";
 
-        //Last 4
         let topPercent5 = parseFloat(redKey5.style.top);
         let leftPercent5 = parseFloat(redKey5.style.left);
         redKey5.style.top = (topPercent5 + 0.4) + "%";
@@ -395,6 +415,381 @@ function cclockwiseClockwise(curPos){
 function cclockwiseCClockwise(curPos){
     topCounterclockwise(curPos);
     bottomCounterclockwise(curPos);
+}
+
+function bigClockwise(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let leftPercent1 = parseFloat(redKey1.style.left);
+        redKey1.style.left = (leftPercent1 + 0.4) + "%";
+
+        let topPercent2 = parseFloat(redKey2.style.top);
+        redKey2.style.top = (topPercent2 + 0.4) + "%";
+
+        let topPercent3 = parseFloat(redKey3.style.top);
+        redKey3.style.top = (topPercent3 - 0.4) + "%";
+
+        let topPercent4 = parseFloat(redKey4.style.top);
+        redKey4.style.top = (topPercent4 + 0.4) + "%";
+
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.top = (topPercent5 - 0.4) + "%";
+
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.top = (topPercent6 + 0.4) + "%";
+
+        let topPercent7 = parseFloat(redKey7.style.top);
+        redKey7.style.top = (topPercent7 - 0.4) + "%";
+
+        let leftPercent8 = parseFloat(redKey8.style.left);
+        redKey8.style.left = (leftPercent8 - 0.4) + "%";
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey3;
+    curPos[1] = redKey1;
+    curPos[2] = redKey5;
+    curPos[3] = redKey2;
+    curPos[4] = redKey7;
+    curPos[5] = redKey4;
+    curPos[6] = redKey8;
+    curPos[7] = redKey6;
+}
+
+function bigCClockwise(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let topPercent1 = parseFloat(redKey1.style.top);
+        redKey1.style.top = (topPercent1 + 0.4) + "%";
+
+        let leftPercent2 = parseFloat(redKey2.style.left);
+        redKey2.style.left = (leftPercent2 - 0.4) + "%";
+
+        let topPercent3 = parseFloat(redKey3.style.top);
+        redKey3.style.top = (topPercent3 + 0.4) + "%";
+
+        let topPercent4 = parseFloat(redKey4.style.top);
+        redKey4.style.top = (topPercent4 - 0.4) + "%";
+
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.top = (topPercent5 + 0.4) + "%";
+
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.top = (topPercent6 - 0.4) + "%";
+
+        let leftPercent7 = parseFloat(redKey7.style.left);
+        redKey7.style.left = (leftPercent7 + 0.4) + "%";
+
+        let topPercent8 = parseFloat(redKey8.style.top);
+        redKey8.style.top = (topPercent8 - 0.4) + "%";
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey2;
+    curPos[1] = redKey4;
+    curPos[2] = redKey1;
+    curPos[3] = redKey6;
+    curPos[4] = redKey3;
+    curPos[5] = redKey8;
+    curPos[6] = redKey5;
+    curPos[7] = redKey7;
+}
+
+function swap(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let leftPercent1 = parseFloat(redKey1.style.left);
+        redKey1.style.left = (leftPercent1 + 0.4) + "%";
+
+        let leftPercent2 = parseFloat(redKey2.style.left);
+        redKey2.style.left = (leftPercent2 - 0.4) + "%";
+
+        let leftPercent3 = parseFloat(redKey3.style.left);
+        redKey3.style.left = (leftPercent3 + 0.4) + "%";
+
+        let leftPercent4 = parseFloat(redKey4.style.left);
+        redKey4.style.left = (leftPercent4 - 0.4) + "%";
+
+        let leftPercent5 = parseFloat(redKey5.style.left);
+        redKey5.style.left = (leftPercent5 + 0.4) + "%";
+
+        let leftPercent6 = parseFloat(redKey6.style.left);
+        redKey6.style.left = (leftPercent6 - 0.4) + "%";
+
+        let leftPercent7 = parseFloat(redKey7.style.left);
+        redKey7.style.left = (leftPercent7 + 0.4) + "%";
+
+        let leftPercent8 = parseFloat(redKey8.style.left);
+        redKey8.style.left = (leftPercent8 - 0.4) + "%";
+        
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey2;
+    curPos[1] = redKey1;
+    curPos[2] = redKey4;
+    curPos[3] = redKey3;
+    curPos[4] = redKey6;
+    curPos[5] = redKey5;
+    curPos[6] = redKey8;
+    curPos[7] = redKey7;
+}
+
+function shuffle1(curPos){
+    //Retrieve keys from curPos
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let leftPercent2 = parseFloat(redKey2.style.left);
+        let topPercent2 = parseFloat(redKey2.style.top);
+        redKey2.style.left = (leftPercent2 - 0.4) + "%";
+        redKey2.style.top = (topPercent2 + 0.4) + "%";
+
+        let leftPercent3 = parseFloat(redKey3.style.left);
+        let topPercent3 = parseFloat(redKey3.style.top);
+        redKey3.style.left = (leftPercent3 + 0.4) + "%";
+        redKey3.style.top = (topPercent3 - 0.4) + "%";
+
+        let leftPercent4 = parseFloat(redKey4.style.left);
+        let topPercent4 = parseFloat(redKey4.style.top);
+        redKey4.style.left = (leftPercent4 - 0.4) + "%";
+        redKey4.style.top = (topPercent4 + 0.4) + "%";
+
+        let leftPercent5 = parseFloat(redKey5.style.left);
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.left = (leftPercent5 + 0.4) + "%";
+        redKey5.style.top = (topPercent5 - 0.4) + "%";
+
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.top = (topPercent6 + 0.4) + "%";
+
+        let leftPercent7 = parseFloat(redKey7.style.left);
+        let topPercent7 = parseFloat(redKey7.style.top);
+        redKey7.style.left = (leftPercent7 + 0.4) + "%";
+        redKey7.style.top = (topPercent7 - 0.4) + "%";
+
+        let leftPercent8 = parseFloat(redKey8.style.left);
+        redKey8.style.left = (leftPercent8 - 0.4) + "%";
+        
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[1] = redKey3;
+    curPos[2] = redKey2;
+    curPos[3] = redKey5;
+    curPos[4] = redKey4;
+    curPos[5] = redKey7;
+    curPos[6] = redKey8;
+    curPos[7] = redKey6;
+}
+
+function shuffle2(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let leftPercent1 = parseFloat(redKey1.style.left);
+        redKey1.style.left = (leftPercent1 + 0.4) + "%";
+
+        let topPercent2 = parseFloat(redKey2.style.top);
+        redKey2.style.top = (topPercent2 + 0.4) + "%";
+
+        let leftPercent3 = parseFloat(redKey3.style.left);
+        let topPercent3 = parseFloat(redKey3.style.top);
+        redKey3.style.left = (leftPercent3 + 0.4) + "%";
+        redKey3.style.top = (topPercent3 + 0.4) + "%";
+
+        let leftPercent4 = parseFloat(redKey4.style.left);
+        let topPercent4 = parseFloat(redKey4.style.top);
+        redKey4.style.left = (leftPercent4 - 0.4) + "%";
+        redKey4.style.top = (topPercent4 - 0.4) + "%";
+
+        let leftPercent5 = parseFloat(redKey5.style.left);
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.left = (leftPercent5 + 0.4) + "%";
+        redKey5.style.top = (topPercent5 + 0.4) + "%";
+
+        let leftPercent6 = parseFloat(redKey6.style.left);
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.left = (leftPercent6 - 0.4) + "%";
+        redKey6.style.top = (topPercent6 - 0.4) + "%";
+
+        let leftPercent8 = parseFloat(redKey8.style.left);
+        let topPercent8 = parseFloat(redKey8.style.top);
+        redKey8.style.left = (leftPercent8 - 0.4) + "%";
+        redKey8.style.top = (topPercent8 - 0.4) + "%";
+        
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey4;
+    curPos[1] = redKey1;
+    curPos[2] = redKey6;
+    curPos[3] = redKey2;
+    curPos[4] = redKey8;
+    curPos[5] = redKey3;
+    curPos[7] = redKey5;
+}
+
+/*
+this one was very annoying :(
+
+Circular arc movement of key 1 and 2 is very wide, so center the rotation point
+of key 1 at 90 top and -37 left and key 2 at 90 top and 127 left (this will
+make the radius of the circle exactly 78).
+
+Keys 1 and 2 will travel a distance of around 61.59 units, so if this movement
+is done in 50 iterations, the normalized velocity vector will need to be
+multiplied by around 1.232 each iteration.
+*/
+function topBottomSwap(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let topPercent3 = parseFloat(redKey3.style.top);
+        redKey3.style.top = (topPercent3 - 0.4) + "%";
+
+        let topPercent4 = parseFloat(redKey4.style.top);
+        redKey4.style.top = (topPercent4 - 0.4) + "%";
+
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.top = (topPercent5 - 0.4) + "%";
+
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.top = (topPercent6 - 0.4) + "%";
+    
+        let topPercent7 = parseFloat(redKey7.style.top);
+        redKey7.style.top = (topPercent7 - 0.4) + "%";
+
+        let topPercent8 = parseFloat(redKey8.style.top);
+        redKey8.style.top = (topPercent8 - 0.4) + "%";
+
+        let leftPercent1 = parseFloat(redKey1.style.left);
+        let topPercent1 = parseFloat(redKey1.style.top);
+        let vector1 = [leftPercent1 + 37, topPercent1 - 90];
+        let velocity1 = [-vector1[1], vector1[0]];
+        normalize(velocity1);
+        velocity1[0] *= 1.232;
+        velocity1[1] *= 1.232;
+        redKey1.style.left = (leftPercent1 + velocity1[0]) + "%";
+        redKey1.style.top = (topPercent1 + velocity1[1]) + "%";
+
+        let leftPercent2 = parseFloat(redKey2.style.left);
+        let topPercent2 = parseFloat(redKey2.style.top);
+        let vector2 = [leftPercent2 - 127, topPercent2 - 90];
+        let velocity2 = [vector2[1], -vector2[0]];
+        normalize(velocity2);
+        velocity2[0] *= 1.232;
+        velocity2[1] *= 1.232;
+        redKey2.style.left = (leftPercent2 + velocity2[0]) + "%";
+        redKey2.style.top = (topPercent2 + velocity2[1]) + "%";
+        
+        i++;
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey3;
+    curPos[1] = redKey4;
+    curPos[2] = redKey5;
+    curPos[3] = redKey6;
+    curPos[4] = redKey7;
+    curPos[5] = redKey8;
+    curPos[6] = redKey1;
+    curPos[7] = redKey2;
 }
 
 /*
