@@ -1,68 +1,8 @@
-/* (gonna organize this later)
-*****************************************************************
-MAIN PAGE
-*****************************************************************
-*/
+/** ================================================= MAIN PAGE ================================================= */
 
-/*
-*****************************************************************
-SOCIAL MEDIA
-*****************************************************************
-*/
-
-/*
-*****************************************************************
-DEMONLOG
-*****************************************************************
-*/
-
-/*
-*****************************************************************
-SPECS
-*****************************************************************
-*/
-
-/*
-*****************************************************************
-BLOG
-*****************************************************************
-*/
-
-#blogposts{
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
+p {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-
-.blogtitle{
-    color: rgb(47, 144, 255);
-    margin: 0
-}
-
-.blogtitle a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.blogtitle:hover{
-    text-decoration: underline;
-}
-
-
-/*
-*****************************************************************
-FUNNY
-*****************************************************************
-*/
-
-#funny_instructions{
-    text-align: center;
-    list-style-position: inside;
-}
-
-
-
 
 #firstline{color: red}
 body{
@@ -78,61 +18,7 @@ body{
     align-items: center; /* Center vertically */
     position: relative; /* Relative positioning for absolute child */
 }
-#bannerimage2{
-    width: 100%;
-    background-image: url(./images/devilvortex.jpg);
-    height: 405px;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Relative positioning for absolute child */
-    text-align: center; /* Center inline elements horizontally */
-}
-#bannerimage3{
-    width: 100%;
-    background-image: url(./images/demonbanner.JPG);
-    height: 395px;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Relative positioning for absolute child */
-    text-align: center; /* Center inline elements horizontally */
-}
-#bannerimage4{
-    width: 100%;
-    background-image: url(./images/blem.jpeg);
-    height: 248px;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Relative positioning for absolute child */
-    text-align: center; /* Center inline elements horizontally */
-}
-#bannerimage5{
-    width: 100%;
-    background-image: url(./images/koshitan.jpg);
-    height: 300px;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Relative positioning for absolute child */
-    text-align: center; /* Center inline elements horizontally */
-}
-#bannerimage6{
-    width: 100%;
-    background-image: url(./images/ome32-4x.gif);
-    height: 372px;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Relative positioning for absolute child */
-    text-align: center; /* Center inline elements horizontally */
-}
+
 ul.navbar{
     list-style-type: none;
     background-color: rgb(59, 59, 59);
@@ -165,22 +51,15 @@ li.navbar a:hover{
 #herotext{
     color: white;
     font-family: sans-serif;
-    margin: 0;
-    
+    margin: 0;  
 }
 #logo{
     display: block;
     width: 83px;
-    /*background-image: url(./images/opduck.jpg);*/ 
     height: 83px;
     position: absolute;
     top: 10px;
     left: 10px;
-    /*
-    position: absolute;
-    top: 7%;
-    left: 1%;
-    */
 }
 .button{
     position: absolute;
@@ -241,8 +120,19 @@ h2{
     font-size: 50px;
 }
 
+/* ============== SOCIAL MEDIA ============== */
 
-
+#bannerimage2{
+    width: 100%;
+    background-image: url(./images/devilvortex.jpg);
+    height: 405px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
 
 #socialmedia{
     margin-top: 50px;
@@ -254,10 +144,20 @@ h2{
     left: 10%;
 }
 
+/* ================================================= DEMON LOG ================================================= */
 
-
-
-
+/* Main/extended/legacy demon log banner */
+#bannerimage3{
+    width: 100%;
+    background-image: url(./images/demonbanner.JPG);
+    height: 395px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
 
 .listnavbar{
     background-color: rgb(59, 59, 59);
@@ -294,16 +194,20 @@ navbar{
     font-size: 5px;
 }
 
-.num1{
+/* Organizing every entry in the demon log */
+.entry{
     display: flex;
+    margin-left: 50px;
 }
-.num2{
+.blocktext{
+    margin-left: 20px;
+}
+.num1{
     display: flex;
 }
 .block1{
     font-size: 80px;
 }
-
 .block2{
     margin-left: 40px;
     margin-top: 35px;
@@ -317,7 +221,82 @@ navbar{
     font-size: 50px;
 }
 .creator{
+    font-size: 20px;
     margin-top: -40px;
+}
+
+/* ============================================= SPECS ============================================= */
+
+#bannerimage4{
+    width: 100%;
+    background-image: url(./images/blem.jpeg);
+    height: 248px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
+
+/* ================================================ BLOG ================================================ */
+
+#bannerimage5{
+    width: 100%;
+    background-image: url(./images/koshitan.jpg);
+    height: 300px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
+
+#blogposts{
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.blogtitle{
+    color: rgb(47, 144, 255);
+    margin: 0
+}
+
+.blogtitle a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.blogtitle:hover{
+    text-decoration: underline;
+}
+
+/* ================================================== FUNNY ================================================= */
+
+#bannerimage6{
+    width: 100%;
+    background-image: url(./images/widetime-4x.gif);
+    height: 200px;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Relative positioning for absolute child */
+    text-align: center; /* Center inline elements horizontally */
+}
+
+#funny_instructions{
+    text-align: center;
+    list-style-position: inside;
+}
+
+#startButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /*
@@ -372,8 +351,8 @@ JAVASCRIPT CSS PROPERTIES
 }
 
 #canvas1{
+    margin-top: 200px;
     border: 5px solid black;
-    margin-top: 50px;
     margin-bottom: 50px;
 }
 

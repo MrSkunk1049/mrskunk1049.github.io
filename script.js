@@ -20,6 +20,7 @@ Global variables
 */
 let redGreenKey;
 let guessingTime = false;
+let alreadyGuessed = false;
 
 
 function startGame(){
@@ -127,42 +128,47 @@ function startGame(){
 
         for(let i = 0; i < 26; i++){
             window.setTimeout(function(){
-                let movementNum = Math.floor(11 * Math.random()) + 1;
-                switch(movementNum){
-                    case 1:
-                        diagSwitch(curPos);
-                        break;
-                    case 2:
-                        clockwiseClockwise(curPos);
-                        break;
-                    case 3:
-                        clockwiseCClockwise(curPos);
-                        break;
-                    case 4:
-                        cclockwiseClockwise(curPos);
-                        break;
-                    case 5:
-                        cclockwiseCClockwise(curPos);
-                        break;
-                    case 6:
-                        bigClockwise(curPos);
-                        break;
-                    case 7:
-                        bigCClockwise(curPos);
-                        break;
-                    case 8:
-                        swap(curPos);
-                        break;
-                    case 9:
-                        shuffle1(curPos);
-                        break;
-                    case 10:
-                        shuffle2(curPos);
-                        break;
-                    case 11:
-                        topBottomSwap(curPos);
-                        break;
-                    default:
+                if(i == 5){
+                    topBottomSwap(curPos);
+                }else if(i == 9){
+                    keyRotation(curPos);
+                }else if(i == 18){
+                    keyRotation(curPos);
+                }else{
+                    let movementNum = Math.floor(10 * Math.random()) + 1;
+                    switch(movementNum){
+                        case 1:
+                            diagSwitch(curPos);
+                            break;
+                        case 2:
+                            clockwiseClockwise(curPos);
+                            break;
+                        case 3:
+                            clockwiseCClockwise(curPos);
+                            break;
+                        case 4:
+                            cclockwiseClockwise(curPos);
+                            break;
+                        case 5:
+                            cclockwiseCClockwise(curPos);
+                            break;
+                        case 6:
+                            bigClockwise(curPos);
+                            break;
+                        case 7:
+                            bigCClockwise(curPos);
+                            break;
+                        case 8:
+                            swap(curPos);
+                            break;
+                        case 9:
+                            shuffle1(curPos);
+                            break;
+                        case 10:
+                            shuffle2(curPos);
+                            break;
+                        default:
+                    }
                 }
             }, delay);
             delay += 300;
@@ -720,6 +726,8 @@ make the radius of the circle exactly 78).
 Keys 1 and 2 will travel a distance of around 61.59 units, so if this movement
 is done in 50 iterations, the normalized velocity vector will need to be
 multiplied by around 1.232 each iteration.
+
+TODO: Change the circular motion to the sin and cos method for accurate key alignment.
 */
 function topBottomSwap(curPos){
     //Retrieve keys from curPos
@@ -790,6 +798,158 @@ function topBottomSwap(curPos){
     curPos[5] = redKey8;
     curPos[6] = redKey1;
     curPos[7] = redKey2;
+}
+
+/*
+************************************************************************************************
+SPECIAL MOVEMENT FUNCTIONS
+************************************************************************************************
+*/
+
+/**
+ * This only occurs on the 6th movement.
+ */
+function blockSwap(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    let angle = 3 * Math.PI / 2;
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let topPercent5 = parseFloat(redKey5.style.top);
+        redKey5.style.top = topPercent5 - 0.8 + "%";
+
+        let topPercent6 = parseFloat(redKey6.style.top);
+        redKey6.style.top = topPercent6 - 0.8 + "%";
+
+        let topPercent7 = parseFloat(redKey7.style.top);
+        redKey7.style.top = topPercent7 - 0.8 + "%";
+
+        let topPercent8 = parseFloat(redKey8.style.top);
+        redKey8.style.top = topPercent8 - 0.8 + "%";
+
+
+        angle -= Math.PI / 50;
+
+        redKey1.style.left = 35 + 20 * Math.cos(angle) + "%";
+        redKey1.style.top = 80 + 20 * Math.sin(angle) + "%";
+
+        redKey2.style.left = 55 + 20 * Math.cos(angle) + "%";
+        redKey2.style.top = 80 + 20 * Math.sin(angle) + "%";
+
+        redKey3.style.left = 35 + 20 * Math.cos(angle) + "%";
+        redKey3.style.top = 100 + 20 * Math.sin(angle) + "%";
+
+        redKey4.style.left = 55 + 20 * Math.cos(angle) + "%";
+        redKey4.style.top = 100 + 20 * Math.sin(angle) + "%";
+        
+        i++
+    }, 5);
+
+    //Update curPos
+    curPos[0] = redKey5;
+    curPos[1] = redKey6;
+    curPos[2] = redKey7;
+    curPos[3] = redKey8;
+    curPos[4] = redKey1;
+    curPos[5] = redKey2;
+    curPos[6] = redKey3;
+    curPos[7] = redKey4;
+}
+
+/**
+ * This only occurs on the 10th and 19th movements.
+ * 
+ * Center the rotation point for keys 1-6 at left = 45, top = 90
+ */
+function keyRotation(curPos){
+    //Retrieve keys from curPos
+    const redKey1 = curPos[0];
+    const redKey2 = curPos[1];
+    const redKey3 = curPos[2];
+    const redKey4 = curPos[3];
+    const redKey5 = curPos[4];
+    const redKey6 = curPos[5];
+    const redKey7 = curPos[6];
+    const redKey8 = curPos[7];
+
+    //Initialize angles
+    let angle1 = Math.PI + Math.atan(3);
+    let angle2 = 2 * Math.PI - Math.atan(3);
+    let angle3 = 5 * Math.PI / 4;
+    let angle4 = 7 * Math.PI / 4;
+    let angle5 = 3 * Math.PI / 4;
+    let angle6 = Math.PI / 4;
+
+    //Update key positions
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i >= 50){
+            clearInterval(interval);
+            return;
+        }
+
+        let leftPercent7 = parseFloat(redKey7.style.left);
+        let topPercent7 = parseFloat(redKey7.style.top);
+        redKey7.style.left = leftPercent7 + 0.4 + "%";
+        redKey7.style.top = topPercent7 - 1.2 + "%";
+
+        let leftPercent8 = parseFloat(redKey8.style.left);
+        let topPercent8 = parseFloat(redKey8.style.top);
+        redKey8.style.left = leftPercent8 - 0.4 + "%";
+        redKey8.style.top = topPercent8 - 1.2 + "%";
+        
+
+        angle1 -= Math.PI / 50;
+        redKey1.style.left = 45 + 10 * Math.sqrt(10) * Math.cos(angle1) + "%";
+        redKey1.style.top = 90 + 10 * Math.sqrt(10) * Math.sin(angle1) + "%";
+        
+        angle2 -= Math.PI / 50;
+        redKey2.style.left = 45 + 10 * Math.sqrt(10) * Math.cos(angle2) + "%";
+        redKey2.style.top = 90 + 10 * Math.sqrt(10) * Math.sin(angle2) + "%";
+
+        angle3 -= Math.PI / 50;
+        redKey3.style.left = 45 + 10 * Math.sqrt(2) * Math.cos(angle3) + "%";
+        redKey3.style.top = 90 + 10 * Math.sqrt(2) * Math.sin(angle3) + "%";
+
+        angle4 -= Math.PI / 50;
+        redKey4.style.left = 45 + 10 * Math.sqrt(2) * Math.cos(angle4) + "%";
+        redKey4.style.top = 90 + 10 * Math.sqrt(2) * Math.sin(angle4) + "%";
+        
+        angle5 -= Math.PI / 50;
+        redKey5.style.left = 45 + 10 * Math.sqrt(2) * Math.cos(angle5) + "%";
+        redKey5.style.top = 90 + 10 * Math.sqrt(2) * Math.sin(angle5) + "%";
+
+        angle6 -= Math.PI / 50;
+        redKey6.style.left = 45 + 10 * Math.sqrt(2) * Math.cos(angle6) + "%";
+        redKey6.style.top = 90 + 10 * Math.sqrt(2) * Math.sin(angle6) + "%";
+
+        i++;
+    }, 5)
+
+    //Update curPos
+    curPos[0] = redKey8;
+    curPos[1] = redKey7;
+    curPos[2] = redKey6;
+    curPos[3] = redKey5;
+    curPos[4] = redKey4;
+    curPos[5] = redKey3;
+    curPos[6] = redKey2;
+    curPos[7] = redKey1;
 }
 
 /*
@@ -978,7 +1138,8 @@ GREEN KEY CHECKING FUNCTIONS
 
 //Functions to check if the key that was clicked is correct
 document.getElementById("redKey1").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey1.style.left == redGreenKey.style.left && redKey1.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -988,7 +1149,8 @@ document.getElementById("redKey1").addEventListener("click", function() {
 });
 
 document.getElementById("redKey2").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey2.style.left == redGreenKey.style.left && redKey2.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -998,7 +1160,8 @@ document.getElementById("redKey2").addEventListener("click", function() {
 });
 
 document.getElementById("redKey3").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey3.style.left == redGreenKey.style.left && redKey3.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -1008,7 +1171,8 @@ document.getElementById("redKey3").addEventListener("click", function() {
 });
 
 document.getElementById("redKey4").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey4.style.left == redGreenKey.style.left && redKey4.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -1018,7 +1182,8 @@ document.getElementById("redKey4").addEventListener("click", function() {
 });
 
 document.getElementById("redKey5").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey5.style.left == redGreenKey.style.left && redKey5.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -1028,7 +1193,8 @@ document.getElementById("redKey5").addEventListener("click", function() {
 });
 
 document.getElementById("redKey6").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey6.style.left == redGreenKey.style.left && redKey6.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -1038,7 +1204,8 @@ document.getElementById("redKey6").addEventListener("click", function() {
 });
 
 document.getElementById("redKey7").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey7.style.left == redGreenKey.style.left && redKey7.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
@@ -1048,7 +1215,8 @@ document.getElementById("redKey7").addEventListener("click", function() {
 });
 
 document.getElementById("redKey8").addEventListener("click", function() {
-    if(guessingTime){
+    if(guessingTime && !alreadyGuessed){
+        alreadyGuessed = true;
         if(redKey8.style.left == redGreenKey.style.left && redKey8.style.top == redGreenKey.style.top){
             correctMessage();
         }else{
