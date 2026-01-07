@@ -278,8 +278,8 @@ navbar{
 
 #bannerimage6{
     width: 100%;
-    background-image: url(./images/widetime-4x.gif);
-    height: 200px;
+    background-image: url(./images/limboahh.jpg);
+    height: 290px;
     background-position: center;
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -351,7 +351,7 @@ JAVASCRIPT CSS PROPERTIES
 }
 
 #canvas1{
-    margin-top: 200px;
+    margin-top: 110px;
     border: 5px solid black;
     margin-bottom: 50px;
 }
