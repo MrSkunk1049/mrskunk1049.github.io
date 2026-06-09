@@ -15,7 +15,7 @@
       <li class="navbar"><a href="funny.html">Funny Stuff</a></li>
     </ul>
 
-    <div id="bannerimage6">
+    <div id="bannerimage6" alt="why this not loading">
         <div id="herotext" style="color: rgb(0, 0, 0);">
             <h1>Funny Stuff</h1>
             <h3 style="font-size: 28px;">Instructions at bottom of page</h3>
@@ -27,6 +27,20 @@
 
 
     <div id="startButton"><button>Start Game</button></div>
+    <div id="speedhackcontainer">
+      <label for="speedhack">Speed: </label>
+      <input type="range" min="0.25" max="1.5" step="0.05" value="1" class="slider" id="speedhack">
+      <output style="width: 20px; text-align: center;" id="speedhackoutput">1</output>
+    </div>
+    <div id="speedhackcomments1">
+      <p style="color: rgb(160, 0, 0);">Isn't ts hard enough? :P</p>
+    </div>
+    <div id="speedhackcomments2">
+      <p style="color: rgb(160, 0, 0);">Why u so slow? </p>
+    </div>
+    
+    
+    
 
     <audio controls id="myaudio" style="visibility: hidden;">
       <source src="images/isolation.mp3">
@@ -53,6 +67,7 @@
       <img src="/images/green_key.png" id="greenKey">
     </div>
 
+    <script src="limbokeys.js"></script>
     <script src="script.js"></script>
 
     <h1><center>
@@ -63,6 +78,7 @@
       <li>The red keys will randomly move and shuffle around</li>
       <li>Your goal is to guess where the green key is</li>
       <li>Refresh the page to play again (the restart button doesn't work)</li>
+      <li>Use the speed slider to adjust difficulty</li>
     </ol>
  </body>
 </html>

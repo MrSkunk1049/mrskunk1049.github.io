@@ -299,6 +299,28 @@ navbar{
     margin-top: 20px;
 }
 
+#speedhackcontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#speedhackcomments1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    visibility: hidden;
+}
+
+#speedhackcomments2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    visibility: hidden;
+}
+
 /*
 *******************************************************************************************************************************
 JAVASCRIPT CSS PROPERTIES
@@ -351,7 +373,6 @@ JAVASCRIPT CSS PROPERTIES
 }
 
 #canvas1{
-    margin-top: 110px;
     border: 5px solid black;
     margin-bottom: 50px;
 }
